@@ -1,0 +1,45 @@
+{
+  "name": "College",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Safety",
+        "Likely",
+        "Reach",
+        "High Reach",
+        "Not rated"
+      ],
+      "default": "Not rated"
+    },
+    "rationale": {
+      "type": "string",
+      "description": "AI-generated rationale from last analysis"
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "TestScore",
+  "type": "object",
+  "properties": {
+    "test_type": {
+      "type": "string",
+      "enum": [
+        "SAT",
+        "ACT",
+        "AP",
+        "SAT Subject",
+        "PSAT",
+        "TOEFL",
+        "Other"
+      ]
+    },
+    "score": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string",
+      "description": "For AP / subject tests"
+    },
+    "date_taken": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "test_type",
+    "score"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

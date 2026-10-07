@@ -1,0 +1,43 @@
+{
+  "name": "Activity",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "grade_levels": {
+      "type": "string",
+      "description": "e.g. 9-12"
+    },
+    "hours_per_week": {
+      "type": "number"
+    },
+    "weeks_per_year": {
+      "type": "number"
+    },
+    "leadership": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Essay",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "prompt": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "file_uri": {
+      "type": "string",
+      "description": "Private upload of the essay document"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Not started",
+        "Draft",
+        "In progress",
+        "Complete"
+      ],
+      "default": "Draft"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

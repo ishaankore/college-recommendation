@@ -1,0 +1,66 @@
+{
+  "name": "Course",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Course name"
+    },
+    "subject": {
+      "type": "string",
+      "enum": [
+        "Math",
+        "Science",
+        "English",
+        "Social Science",
+        "World Language",
+        "Arts",
+        "Computer Science",
+        "Other"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "Standard",
+        "Honors",
+        "AP",
+        "IB",
+        "Dual Enrollment",
+        "College"
+      ],
+      "default": "Standard"
+    },
+    "grade": {
+      "type": "string",
+      "description": "Letter grade e.g. A-, B+"
+    },
+    "year": {
+      "type": "string",
+      "enum": [
+        "9",
+        "10",
+        "11",
+        "12",
+        "College"
+      ]
+    },
+    "credits": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
